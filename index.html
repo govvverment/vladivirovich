@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>&#1052;&#1086;&#1080; &#1089;&#1086;&#1094;&#1089;&#1077;&#1090;&#1080;</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    position: relative;
+    overflow-x: hidden;
+    background: #0b0b0b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 32px;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: -20px;
+    background: url('IMG_7301.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(10px);
+    transform: scale(1.05);
+    z-index: -2;
+  }
+
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 32%),
+      rgba(0, 0, 0, 0.2);
+    z-index: -1;
+  }
+
+  .wrapper {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 31.25px;
+    padding: 62.5px 47px;
+    margin-top: 290px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 18.75px 46.875px rgba(0, 0, 0, 0.25);
+    animation: fadeInUp 1.2s ease forwards;
+    opacity: 0;
+    transform: translateY(25px);
+    max-width: 750px;
+    width: 100%;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 37.5px;
+  }
+
+  .button {
+    width: 100%;
+    min-height: 140px;
+    padding: 25px 37.5px;
+    font-size: 34.375px;
+    font-weight: bold;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 25px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 31.25px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+    transition: all 0.35s ease;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    overflow: hidden;
+    background-size: 200% 200%;
+  }
+
+  .button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+    transform: rotate(25deg);
+    transition: all 0.75s ease;
+    pointer-events: none;
+  }
+
+  .button:hover::before {
+    top: -25%;
+    left: -25%;
+  }
+
+  .button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 26px 54px rgba(0, 0, 0, 0.36);
+    border-color: rgba(255, 255, 255, 0.42);
+  }
+
+  .button:active {
+    transform: scale(0.97);
+  }
+
+  .button i {
+    font-size: 50px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 2px rgba(255,255,255,0.4));
+  }
+
+  .button span {
+    display: inline-block;
+    word-break: break-word;
+    line-height: 1.2;
+    flex: 1;
+  }
+
+  .instagram {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)),
+      linear-gradient(135deg, #feda75 0%, #fa7e1e 18%, #d62976 44%, #962fbf 68%, #4f5bd5 100%);
+    animation: gradientMove 6s ease infinite;
+  }
+
+  .instagram:hover {
+    box-shadow: 0 28px 60px rgba(214, 41, 118, 0.34);
+  }
+
+  .telegram {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04)),
+      linear-gradient(135deg, #36aee2 0%, #2497d1 42%, #1677b7 100%);
+    color: #f4fbff;
+  }
+
+  .telegram:hover {
+    box-shadow: 0 28px 60px rgba(27, 136, 205, 0.36);
+  }
+
+  .telegram i {
+    color: #ffffff;
+  }
+
+  .youtube {
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.03)),
+      linear-gradient(135deg, #ff4e45 0%, #ff2f2f 38%, #d90914 100%);
+    color: #fff6f6;
+  }
+
+  .youtube:hover {
+    box-shadow: 0 28px 60px rgba(217, 9, 20, 0.38);
+  }
+
+  .youtube i {
+    color: #ffffff;
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .instagram i {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%,
+      #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .tap-hint {
+    position: fixed;
+    top: 22px;
+    left: 50%;
+    right: auto;
+    width: min(750px, calc(100vw - 40px));
+    min-height: 138px;
+    padding: 30px 34px 26px;
+    border-radius: 28px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+    pointer-events: none;
+    z-index: 20;
+    transform: translateX(-50%);
+  }
+
+  .tap-hint::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    right: -108px;
+    width: 96px;
+    height: 96px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cpath d='M28 94c-2-18 6-34 20-42 12-7 28-8 46-7M70 18l24 20-22 22' fill='none' stroke='rgba(255,255,255,0.98)' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: scaleX(-1) rotate(-82deg);
+    transform-origin: center;
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.28));
+    animation: hintArrowPulse 1.4s ease-in-out infinite;
+  }
+
+  .tap-hint span {
+    display: none;
+  }
+
+  .info-text {
+    font-size: 27px;
+    color: #fff;
+    text-align: center;
+    line-height: 1.55;
+  }
+
+  @keyframes hintArrowPulse {
+    0%, 100% {
+      transform: translateY(0) scaleX(-1) rotate(-82deg) scale(1);
+      opacity: 0.9;
+    }
+    50% {
+      transform: translateY(-8px) scaleX(-1) rotate(-82deg) scale(1.05);
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    body {
+      padding: 104px 14px 24px;
+    }
+
+    .wrapper {
+      padding: 34px 22px;
+      border-radius: 24px;
+      margin-top: 190px;
+    }
+
+    .button-container {
+      gap: 22px;
+    }
+
+    .button {
+      min-height: 96px;
+      padding: 20px 22px;
+      font-size: 23px;
+      gap: 18px;
+      border-radius: 20px;
+    }
+
+    .button i {
+      font-size: 34px;
+    }
+
+    .tap-hint {
+      top: 14px;
+      left: 50%;
+      right: auto;
+      width: min(750px, calc(100vw - 28px));
+      min-height: 112px;
+      padding: 22px 22px 18px;
+      border-radius: 20px;
+    }
+
+    .tap-hint::before {
+      top: -2px;
+      right: -56px;
+      width: 52px;
+      height: 52px;
+    }
+
+    .info-text {
+      font-size: 19px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="tap-hint" aria-hidden="true">
+    <div class="info-text">&#1045;&#1089;&#1083;&#1080; &#1089;&#1089;&#1099;&#1083;&#1082;&#1072; &#1085;&#1077; &#1086;&#1090;&#1082;&#1088;&#1099;&#1074;&#1072;&#1077;&#1090;&#1089;&#1103;, &#1085;&#1072;&#1078;&#1084;&#1080;&#1090;&#1077; &#171;...&#187;, &#1072; &#1079;&#1072;&#1090;&#1077;&#1084; &#1086;&#1090;&#1082;&#1088;&#1086;&#1081;&#1090;&#1077; &#1089;&#1090;&#1088;&#1072;&#1085;&#1080;&#1094;&#1091; &#1095;&#1077;&#1088;&#1077;&#1079; &#1073;&#1088;&#1072;&#1091;&#1079;&#1077;&#1088;.</div>
+    <span></span>
+  </div>
+
+  <div class="wrapper">
+    <div class="button-container">
+      
+      <a class="button telegram" href="https://t.me/+ZiphSwhIKqZmYjIy" target="_blank">
+        <i class="fab fa-telegram-plane"></i>
+        <span>По Ворку от 60к сюда</span>
+      </a>
+	  
+	  <a class="button instagram" href="https://www.instagram.com/vladimirovich0666" target="_blank">
+        <i class="fab fa-instagram"></i>
+        <span>Основной Инстаграм</span>
+      </a>
+
+      <a class="button youtube" href="https://youtube.com/@vladimirovich0888" target="_blank">
+        <i class="fab fa-youtube"></i>
+        <span>YouTube с подкастами</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
